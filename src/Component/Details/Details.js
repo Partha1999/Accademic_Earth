@@ -11,7 +11,7 @@ const Details = () => {
   console.log(SingleCourse);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/courses/${id}`)
+    fetch(`https://academic-earth-server-phi.vercel.app/courses/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setSingleCourse(data);
@@ -30,7 +30,7 @@ const Details = () => {
           <p className="mb-3">{SingleCourse.details}</p>
           <div>
             <p className="font-bold mb-3">Price : {SingleCourse.price}</p>
-            <div>
+            <div className="flex justify-between">
             <Link to={`/premiumAcess/${id}`}>
               <button className="btn btn-primary">Premium</button>
             </Link>

@@ -29,12 +29,13 @@ function App() {
         },
         {
           path:'/Faq',
+          
           element:<PrivateRoute><Faq></Faq></PrivateRoute>
         },
         {
           path:'/courses',
           element:<PrivateRoute><Courses></Courses></PrivateRoute>,
-          loader: () => fetch('http://localhost:5000/courses')
+          loader: () => fetch('https://academic-earth-server-phi.vercel.app/courses')
         },
         {
           path:'/details/:id',

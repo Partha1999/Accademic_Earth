@@ -8,7 +8,7 @@ const PremiumAcess = () => {
   console.log(SingleCourse);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/courses/${id}`)
+    fetch(`https://academic-earth-server-phi.vercel.app/courses/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setSingleCourse(data);

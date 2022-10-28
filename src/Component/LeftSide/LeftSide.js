@@ -12,7 +12,7 @@ const [SingleCourse, setSingleCourse] = useState([]);
 console.log(SingleCourse);
 
 useEffect(() => {
-  fetch("http://localhost:5000/courses")
+  fetch("https://academic-earth-server-phi.vercel.app/courses")
     .then((res) => res.json())
     .then((data) => {
       setSingleCourse(data);
