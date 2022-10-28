@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import Pdf from "react-to-pdf";
+
+const ref = React.createRef();
 
 const Details = () => {
   const { id } = useParams();
@@ -22,14 +25,26 @@ const Details = () => {
           src={SingleCourse.img}
           alt=""
         />
-        <div>
+        <div ref={ref}>
           <h1 className="text-2xl mb-3">{SingleCourse.title}</h1>
           <p className="mb-3">{SingleCourse.details}</p>
           <div>
             <p className="font-bold mb-3">Price : {SingleCourse.price}</p>
+            <div>
             <Link to={`/premiumAcess/${id}`}>
               <button className="btn btn-primary">Premium</button>
             </Link>
+            <Pdf targetRef={ref} filename={`${SingleCourse.title}.pdf`}>
+              {({ toPdf }) => (
+                <button
+                  className="p-2 rounded-md bg-red-600 text-white"
+                  onClick={toPdf}
+                >
+                  Download
+                </button>
+              )}
+            </Pdf>
+            </div>
           </div>
         </div>
       </section>

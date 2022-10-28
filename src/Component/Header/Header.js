@@ -1,20 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import useAuth from "../Share/useAuth";
-import img3 from './../../Component/Images/logo.png'
+import img3 from "./../../Component/Images/logo.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
+  const [open, setOpen] = useState(false);
   const { user, logout } = useAuth();
   return (
     <nav>
       <div className="navbar bg-base-100">
         <div className="flex-1">
-    <img className="w-7 h-7 bg-white rounded-full" src={img3} alt="" />
+          <img className="w-7 h-7 bg-white rounded-full" src={img3} alt="" />
           <Link className="btn btn-ghost normal-case text-xl">
             Academic Earth
           </Link>
         </div>
-      
+
         <div className="flex-none">
           <div
             className="hidden w-full md:block md:w-auto mr-5"
@@ -87,11 +90,19 @@ const Header = () => {
               )}
             </ul>
           </div>
+
+          <button onClick={() => setOpen(!open)} className="h-6 w-6 mr-2">
+            {open ? (
+              <FontAwesomeIcon icon={faMoon}></FontAwesomeIcon>
+            ) : (
+              <FontAwesomeIcon icon={faSun}></FontAwesomeIcon>
+            )}
+          </button>
           {user?.photoURL && (
             <div className="dropdown dropdown-end">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
-                  <img src={user?.photoURL} alt='' />
+                  <img src={user?.photoURL} alt="" />
                 </div>
               </label>
             </div>
