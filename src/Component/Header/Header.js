@@ -6,7 +6,7 @@ const Header = () => {
         <nav>
             <div className="navbar bg-base-100">
   <div className="flex-1">
-    <Link className="btn btn-ghost normal-case text-xl">daisyUI</Link>
+    <Link className="btn btn-ghost normal-case text-xl">Academic Earth</Link>
   </div>
   <div className="flex-none">
   <div
