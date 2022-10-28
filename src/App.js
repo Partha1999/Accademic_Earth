@@ -4,8 +4,9 @@ import Blog from './Component/Blog/Blog';
 import Faq from './Component/FAQ/Faq';
 import Home from './Component/Home/Home';
 import Login from './Component/Login/Login';
+import LogOut from './Component/LogOut/LogOut';
 import Main from './Component/Main/Main';
-import Signup from './Component/SignUp/Signup';
+import SignUp from './Component/SignUp/SignUp';
 
 function App() {
   const router = createBrowserRouter([
@@ -30,8 +31,12 @@ function App() {
           element:<Login></Login>
         },
         {
-          path:'/Signup',
-          element:<Signup></Signup>
+          path:'/SignUp',
+          element:<SignUp></SignUp>
+        },
+        {
+          path:'/Logout',
+          element:<LogOut></LogOut>
         }
       ]
     }
