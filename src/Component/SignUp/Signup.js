@@ -189,20 +189,22 @@ const SignUp = () => {
               </p>
             </form>
 
-            <div className="flex mx-auto mt-4 mb-2 ">
+            <div className="flex mx-auto mt-4 mb-2 text-black mb-4">
               <button
+              className="mr-2 shadow-lg p-2 rounded-lg bg-slate-300"
                 onClick={() =>
                   handelGoogleSignUp(signInWithGoogle, location, navigate)
                 }
               >
-                <FaGoogle className="w-7 h-7 mr-3"></FaGoogle>
+                Google
               </button>
               <button
+              className="ml-2 shadow-lg p-2 rounded-lg bg-slate-300"
                 onClick={() =>
                   handleGithubSignUp(githubSignIn, location, navigate)
                 }
               >
-                <FaGithub className="w-7 h-7 ml-3"></FaGithub>
+               GitHub 
               </button>
             </div>
           </div>
